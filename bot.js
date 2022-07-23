@@ -1,7 +1,10 @@
 const puppeteer = require("puppeteer");
 
 const main = async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({
+    headless: false,
+    slowMo: 250,
+  });
   const page = await browser.newPage();
   await page.goto("https://quotes.toscrape.com/page/2/");
 
